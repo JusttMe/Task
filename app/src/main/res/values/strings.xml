@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Task</string>
+    <string name="label">Manual mode</string>
+    <string name="label_vibration">Vibration</string>
+    <string name="label_flashlight">Flashlight</string>
+    <string name="label_sound">Sound</string>
+    <string name="label_bpm_hint">Set BPM you need below</string>
+    <string name="labelBPM">bpm</string>
+    <string name="label_indicator">Indicator</string>
+    <string name="label_start">Start</string>
+    <string name="label_stop">Stop</string>
+</resources>

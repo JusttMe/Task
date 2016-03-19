@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.task.task.MainActivity">
+
+    <TextView
+        style="@style/MyTextView.AllCaps"
+        android:text="@string/label"
+        android:id="@+id/labelManualMode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:focusableInTouchMode="true"
+        android:focusable="true"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/label_bkg"
+        android:weightSum="3"
+        android:elevation="5dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@+id/labelManualMode"
+        android:id="@+id/footer">
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:background="@android:color/transparent"
+            android:textColor="@drawable/btn_bkg_text"
+            android:drawableTop="@drawable/btn_bkg_vibro"
+            android:paddingTop="5dp"
+            android:drawablePadding="10dp"
+            android:textAllCaps="true"
+            android:textOff="@string/label_vibration"
+            android:textOn="@string/label_vibration"
+            android:id="@+id/vibroBtn"
+            />
+
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:background="@android:color/transparent"
+            android:textColor="@drawable/btn_bkg_text"
+            android:drawableTop="@drawable/btn_bkg_flash"
+            android:paddingTop="5dp"
+            android:drawablePadding="10dp"
+            android:textAllCaps="true"
+            android:textOff="@string/label_flashlight"
+            android:textOn="@string/label_flashlight"
+            android:id="@+id/flashBtn"
+            />
+        <ToggleButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:background="@android:color/transparent"
+            android:textColor="@drawable/btn_bkg_text"
+            android:drawableTop="@drawable/btn_bkg_sound"
+            android:paddingTop="5dp"
+            android:drawablePadding="10dp"
+            android:textAllCaps="true"
+            android:textOff="@string/label_sound"
+            android:textOn="@string/label_sound"
+            android:id="@+id/soundBtn"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/MyTextView.AllCaps"
+        android:text="@string/label_bpm_hint"
+        android:id="@+id/labelBPMHint"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="17sp"
+        android:textColor="#222"
+        android:layout_below="@+id/footer"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BPMView"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/labelBPMHint"
+        android:layout_centerHorizontal="true">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BPMField"
+            android:text="100"
+            android:textSize="40sp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            />
+
+        <TextView
+            style="@style/MyTextView"
+            android:text="@string/labelBPM"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/labelBPM"
+            android:layout_centerHorizontal="true" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressView"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/BPMView">
+
+        <TextView
+            style="@style/MyTextView"
+            android:text="-"
+            android:textSize="30sp"
+            android:id="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"/>
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/seekBar"
+            android:thumb="@drawable/arrows"
+            android:progress="100"
+            android:max="200"
+            android:progressDrawable="@drawable/seek"
+            android:layout_toRightOf="@+id/textView"
+            android:layout_toLeftOf="@+id/textView2"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            style="@style/MyTextView"
+            android:text="+"
+            android:layout_centerVertical="true"
+            android:textSize="30sp"
+            android:id="@+id/textView2"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/MyTextView.AllCaps"
+        android:text="@string/label_indicator"
+        android:id="@+id/labelIndicator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/progressView" />
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/indicator"
+        android:background="@drawable/indicator_green"
+        android:layout_below="@+id/labelIndicator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:elevation="10dp"
+
+        android:layout_below="@+id/indicator">
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:background="@drawable/btn_start_bkg"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:textOff="@string/label_start"
+            android:textOn="@string/label_stop"
+            android:id="@+id/startBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/indicator" />
+    </FrameLayout>
+</RelativeLayout>
